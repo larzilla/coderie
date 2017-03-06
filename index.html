@@ -7,12 +7,14 @@ title: Coderie - a simple svg encoder
       <div class="row">
         <label for="raw">
           <span>SVG Code</span>
-        <textarea id="raw" onKeyUp="encodeIt(event)" class="primary"></textarea></label>
+        <textarea id="raw" class="primary"></textarea></label>
+        <button onclick="encodeIt(event)">Encode it</button>
       </div>
       <div class="row">
         <label for="encoded">
           <span>Encoded SVG</span>
         <textarea id="encoded" class="secondary"></textarea></label>
+        <button onclick="decodeIt(event)">Decode it</button>
       </div>
       <div class="row">
         <label for="compiled">
