@@ -14,6 +14,8 @@ If you have a previously encoded svg but do not have access to the original unen
 2. Hit the *decode* button to generate the raw SVG Code.
 
 ### Helpful Resources
+
 [Probably Don't base64 SVG](https://css-tricks.com/probably-dont-base64-svg/)
+
 [Optimizing SVGs in data URIs](https://codepen.io/tigt/post/optimizing-svgs-in-data-uris)
 

@@ -42,7 +42,7 @@ form textarea {
   border: 0;
   font-family: Consolas, monaco, monospace;
   padding: .5em;
-  outline-color: #FF9800;
+  outline-color: #6bedbc;
 }
 form label {
   display:block;
@@ -50,18 +50,21 @@ form label {
   font-size: 1.75rem;  
   line-height: 1.1;
 }
-textarea.primary {
-  color: #EEEEEE;
-}
-textarea.secondary,
-textarea.tertiary {
-  color: #ff9800;
+textarea {
+  color: #cecece;
 }
 form label span {
   margin-bottom: .25em;
   display:block;
 }
-
+button {
+  color: #fff;
+  background-color: #41b98c;
+  border:0;
+  padding: 8px 20px;
+  float: right;
+  font-size: 12px;
+}
 /* Display box */
 .section-demo {
   width:100%;  
