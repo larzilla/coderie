@@ -63,7 +63,8 @@ button {
   border:0;
   padding: 8px 20px;
   float: right;
-  font-size: 12px;
+  text-transform: uppercase;
+  font-family: "Karla", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
 }
 /* Display box */
 .section-demo {
@@ -99,7 +100,7 @@ button {
   font-weight: bold;
 }
 .dark .meta {
-  background-color: hsla(158, 48%, 49%, .5);
+  background-color: hsl(225, 21%, 13%);
 }
 
 /* Switch */
@@ -129,6 +130,7 @@ button {
 }
 .label-switch input[type="checkbox"]:checked + .checkbox {
     background-color: hsla(215,48%,4%,1); /* Lights out */
+    border: 1px solid #fff;
 }
 .label-switch input[type="checkbox"] + .checkbox {
     background-color:#41b98c; /* Lights on */
@@ -154,7 +156,7 @@ button {
 }
 .label-switch input[type="checkbox"]:checked + .checkbox::after {
     left: 35px;
-    width: 41px;
+    width: 40px;
     top: 1px;
 }
 .label-switch input[type="checkbox"] + .checkbox::after {
