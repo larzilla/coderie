@@ -1,27 +1,27 @@
 const getElement = document.getElementById.bind(document);
 let formElements = {
-  input: getElement('input'),
+  rawSvg: getElement('rawSvg'),
   encoded: encoded = getElement('encoded'),
   compiled: getElement('compiled'),
   output: getElement('output')
 }
 
 function encodeIt(e) { 
-  const { encoded } = formElements;
+  const { rawSvg } = formElements;
   var encodedSvg = replaceBadChars(input.value);
   
-  encoded.value = encodedSvg;
+  rawSvg.value = encodedSvg;
   compileIt(encodedSvg);
   e.preventDefault();
 
 }
 
 function decodeIt(e) {  
-  const { encoded } = formElements;
+  const { rawSvg, encoded } = formElements;
   var entry = encoded.value;
   var decodedSvg = decodeURIComponent(entry.replace(/\'/g,  '"'));
   
-  encoded.value = decodedSvg;
+  rawSvg.value = decodedSvg;
   compileIt(entry);
   e.preventDefault();
 }
