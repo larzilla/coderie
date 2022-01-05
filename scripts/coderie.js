@@ -1,41 +1,49 @@
-//Helpers
-var t = document.getElementById.bind(document),
-    theTaco = t('taco'),
-    raw = t('raw'),
-    encoded = t('encoded'),
-    compiled = t('compiled'),
-    output = t('output'),
-    switchBox = t('switchbox'),
-    badChars = /[-~<>&#%\r\n\t]/g;
-function encodeIt(e) {  
-  var entry = raw.value;
-  var encodedSvg = entry.replace(/\"/g, "'");
-      encodedSvg = encodedSvg.replace(badChars, encodeURIComponent);
-  var cssBg = 'background-image: url("data:image/svg+xml,' + encodedSvg + '");';
-  
-  //Output
-  encoded.value = encodedSvg;
-  compileIt(cssBg);
-  e.preventDefault();
+const getElement = document.getElementById.bind(document);
+let formElements = {
+  input: getElement('input'),
+  encoded: encoded = getElement('encoded'),
+  compiled: getElement('compiled'),
+  output: getElement('output')
 }
+
+function encodeIt(e) { 
+  const { encoded } = formElements;
+  var encodedSvg = replaceBadChars(input.value);
+  
+  encoded.value = encodedSvg;
+  compileIt(encodedSvg);
+  e.preventDefault();
+
+}
+
 function decodeIt(e) {  
+  const { encoded } = formElements;
   var entry = encoded.value;
   var decodedSvg = decodeURIComponent(entry.replace(/\'/g,  '"'));
-  var cssBg = 'background-image: url("data:image/svg+xml,' + entry + '");';
   
-  //Output
-  raw.value = decodedSvg;
-  compileIt(cssBg);
+  encoded.value = decodedSvg;
+  compileIt(entry);
   e.preventDefault();
 }
-function compileIt(cssBg) {
+
+function replaceBadChars(input) {
+  const badChars = /[-~<>&#%\r\n\t]/g;
+  var result = input.replace(/\"/g, "'");
+  result = result.replace(badChars, encodeURIComponent);
+  return result;
+}
+
+function compileIt(input) {
+  const { compiled, output } = formElements;
+  const cssBg = 'background-image: url("data:image/svg+xml,' + input + '");';
+
   compiled.value = cssBg;
   output.setAttribute("style", cssBg);
 }
 
-//Scheme color
-function changeScheme() {
- output.parentElement.classList.toggle("dark");
+function switchContrast() {
+  let box = getElement('lightbox');
+  box.classList.toggle("dark");
 }
 
 

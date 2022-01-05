@@ -3,11 +3,11 @@ layout: default
 title: Coderie - a simple svg encoder
 ---
     <div class="section-entries">
-    <form id="taco">
+    <form id="entryForm">
       <div class="row">
-        <label for="raw">
+        <label for="input">
           <span>SVG Code</span>
-        <textarea id="raw" class="primary"></textarea></label>
+        <textarea id="input" class="primary"></textarea></label>
         <button onclick="encodeIt(event)">Encode it</button>
       </div>
       <div class="row">
@@ -26,7 +26,7 @@ title: Coderie - a simple svg encoder
     <div class="section-demo">
       <div class="meta">
         <label class="label-switch">      
-          <input id="switchbox" type="checkbox" onclick="changeScheme();" />
+          <input id="switchbox" type="checkbox" onclick="switchContrast();" />
           <div class="checkbox"></div>
           <span class="switch-active" aria-hidden="true"><svg
        viewBox="0 0 475 475" style="enable-background:new 0 0 475 475;" xml:space="preserve" width="22px" height="22px">
